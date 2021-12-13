@@ -1,4 +1,10 @@
-export function RepositoryItem({ repository }) {
+import { Repository } from '../models/repository';
+
+interface RepositoryItemProps {
+    repository: Omit<Repository, 'id'>;
+}
+
+export function RepositoryItem({ repository }: RepositoryItemProps) {
     return (
         <li>
             <strong>{repository?.name}</strong>
